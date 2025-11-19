@@ -1,0 +1,10 @@
+[
+build
+]
+  command = "corepack enable && pnpm install && pnpm build:client"
+  publish = "dist/static"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

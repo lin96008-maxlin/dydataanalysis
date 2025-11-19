@@ -47,7 +47,17 @@ export const Typography: React.FC<TypographyProps> = ({ children, variant = 'bod
     body2: 'text-sm',
   };
   
-  const Tag = variant as keyof JSX.IntrinsicElements;
+  const tagMap: Record<typeof variant, keyof JSX.IntrinsicElements> = {
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6',
+    body1: 'p',
+    body2: 'p',
+  };
+  const Tag = tagMap[variant];
   
   return (
     <Tag className={cn(baseClasses, variantClasses[variant], className)}>
